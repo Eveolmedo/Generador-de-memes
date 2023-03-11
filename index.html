@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="crossorigin="anonymous"referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Generador de memes</title>
+</head>
+<body>
+    <header>
+        <h1 class="title">Generador de Memes</h1>
+        <nav class="header-buttons">
+            <button id="aside-img">
+                <i class="fa-regular fa-image"></i>
+                Imagen
+            </button>
+            <button id="aside-text">
+                <i class="fa-solid fa-font"></i>
+                Texto
+            </button>
+            <button>
+                <i class="fa-regular fa-lightbulb"></i>
+                Modo oscuro
+            </button>
+        </nav>
+    </header>
+    <main>
+        <div class="meme-container">
+            <section class="meme-text-container">
+                <h2>TOP TEXT</h2>
+            </section>
+            <article class="meme-img">
+                <img>
+            </article>
+            <section class="meme-text-container">
+                <h2>BOTTOM TEXT</h2>
+            </section>
+        </div>
+        <button class="download-meme"><i class="fa-solid fa-download"></i>Descargar meme</button>
+        <aside>
+            <section class="aside-img">  
+                <h2>Imagen</h2>
+                <fieldset class="url-img">
+                    <label for="">
+                        URL                 
+                    </label>
+                    <input type="text" name="img" id="img">
+                </fieldset>
+                <label for="">
+                    Fondo
+                </label>
+                <fieldset class="background-color-container">
+                    <div class="background-color">
+                        <input type="color" name="" id="color">
+                        <span>#exa</span>
+                    </div>
+                    <div class="background-effect-container">
+                        <select name="" id="" class="background-effect">
+                            <option value="">Ninguno</option>
+                            <option value="clarify">Aclarar</option>
+                            <option value="darken">Oscurecer</option>
+                            <option value="difference">Diferencia</option>
+                            <option value="brightness">Luminosidad</option>
+                            <option value="multiply">Multiplicar</option>
+                        </select>
+                    </div>
+                </fieldset>
+                <fieldset class="filters">
+                    <label for="">
+                        Filtros
+                    </label>
+                    <label for="">
+                        Brillo
+                    </label>
+                    <input type="range" name="brightness" id="brightness">
+                    <label for="">
+                        Opacidad
+                    </label>
+                    <input type="range" name="opacity" id="opacity">
+                    <label for="">
+                        Contraste
+                    </label>
+                    <input type="range" name="contrast" id="contrast">
+                    <label for="">
+                        Desenfoque
+                    </label>
+                    <input type="range" name="blur" id="blur">
+                    <label for="">
+                        Escala de grises
+                    </label>
+                    <input type="range" name="grayscale" id="grayscale">
+                    <label for="">
+                        HUE
+                    </label>
+                    <input type="range" name="hue-rotation" id="hue-rotation">
+                    <label for="">
+                        Saturado
+                    </label>
+                    <input type="range" name="saturation" id="saturation">
+                    <label for="">
+                        Negativo
+                    </label>
+                    <input type="range" name="invert" id="invert">
+                </fieldset>
+                <button class="reset-filter">Reestrablecer filtros</button>
+            </section>
+            <section class="aside-text">
+                <h2>Texto</h2>
+                <fieldset class="meme-text">
+                    <label for="">
+                        Superior
+                    </label>
+                    <input type="text" name="top-text" id="top-text">
+                </fieldset>
+                <input type="checkbox" name="" id="no-text">
+                <label for="">
+                    Sin texto superior
+                </label>
+                <fieldset class="meme-text">
+                    <label for="">
+                        Inferior
+                    </label>
+                    <input type="text" name="bottom-text" id="bottom-text">
+                </fieldset>
+                <input type="checkbox" name="" id="no-text">
+                <label for="">
+                    Sin texto inferior
+                </label>
+                <fieldset class="font-container">
+                    <label for="">
+                        Fuente
+                    </label>
+                    <select name="" id="font">
+                        <option value="Arial">Arial</option>
+                        <option value="Arial Black">Arial Black</option>
+                        <option value="American Typewriter">American Typewriter</option>
+                        <option value="Andale Mono">Andale Mono</option>
+                        <option value="Comic Sans MS">Comic Sans MS</option>
+                        <option value="Helvetica">Helvetica</option>
+                        <option value="Impact">Impact</option>
+                        <option value="Verdana">Verdana</option>
+                        <option value="Times New Roman">Times New Roman</option>
+                    </select>
+                    <fieldset class="align-container">
+                        <input type="number" name="" id="" class="font-size">
+                        <div>
+                            <button class="aling-button"><i class="fa-solid fa-align-left"></i></button>
+                            <button class="aling-button"><i class="fa-solid fa-align-center"></i></button>
+                            <button class="aling-button"><i class="fa-solid fa-align-right"></i></button>
+                        </div>
+                    </fieldset>
+                </fieldset>
+                <div class="text-color-container">
+                    <label for="">
+                        Color
+                    </label>
+                    <input type="color" name="" id="color">
+                    <span>#exa</span>
+                </div>
+                <div class="text-background-container">
+                    <label for="">
+                        Fondo
+                    </label>
+                    <input type="color" name="" id="color">
+                    <span>#exa</span>
+                </div>
+                <input type="checkbox" name="" id="">
+                <label for="">
+                    Fondo transparente
+                </label>
+                <fieldset class="outline-container">
+                    <label for="">
+                        Contorno
+                    </label>
+                    <div>
+                        <button class="outline">Ninguno</button>
+                        <button class="outline">Claro</button>
+                        <button class="outline">Oscuro</button>
+                    </div>    
+                </fieldset>
+                <label for="">
+                    Espaciado
+                </label>
+                <input type="number" name="" id="" class="spacing">
+                <label for="">
+                    Interlineado
+                </label>
+                <select name="" id="" class="spacing">
+                    <option value="0.8">0.8</option>
+                    <option value="1">1</option>
+                    <option value="1.2">1.2</option>
+                    <option value="1.5">1.5</option>
+                    <option value="2">2</option>
+                    <option value="2.5">2.5</option>
+                </select>
+            </section>
+        </aside>
+    </main>
+    <script src="./js/main.js"></script>
+</body>
+</html>
