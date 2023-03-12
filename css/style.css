@@ -8,42 +8,75 @@
     text-decoration: none;
 }
 
-/* AGREGAR UN ESTILO GLOBAL PARA LOS MARGIN DE LOS LABEL */
-/* AGREGAR UN ESTILO GLOBAL PARA BORDER-RADIUS */
+/* VARIABLES */
 
-body{
-    background-color: rgb(58, 51, 51);
+:root {
+    --background-primary: #00191A;
+    --background-secondary: #002F31;
+    --background-aside: #003438;
+    --button-color-primary: #005D62;
+    --button-color-hover: #008890;
+    --font-color-primary: #e7e7e7;
+    --font-primary: "Open Sans", sans-serif;
+    --border-radius: 5px;
 }
 
+[data-theme="light-theme"] {
+    --background-primary: #5AC6CC;
+    --background-secondary: #2CB2B9;
+    --background-aside: #11A5AC;
+    --button-color-primary: #2ab5bd;
+    --font-color-primary: #181818;
+    --font-color-secondary: #e7e7e7;
+    --button-color-hover: #009CA4;   
+}
+
+.hidden {
+    display: none;
+}
+
+body{
+    background-color: var(--background-primary);
+    color: var(--font-color-primary);
+    font-family: var(--font-primary);
+}
+
+/* HEADER SECTION */
+
 header{
-    width: 100%;
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
     padding: 10px;
-    background-color: gray;
-
+    background-color: var(--background-secondary);
 }
 
 h1{
     font-size: 2.5em;
 }
 
+button{
+    background-color: var(--button-color-primary);
+    color: var(--font-color-primary);
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 10px;
+}
+
 .header-buttons{
-    margin-top: 25px;
+    margin-top: 20px;
 }
 
 .header-buttons button{
     font-size: 1em;
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
+    background: none;
 }
 
 .header-buttons button:hover{
-    background-color: aqua;
+    background-color: var(--button-color-hover);
 }
+
+/* MAIN SECTION */
 
 main{
     display: flex;
@@ -63,41 +96,42 @@ main{
 }
 
 .meme-text-container{
-    background-color: white;
-    padding: 30px;
-    font-size: 30px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    padding: 30px;      /*ES EL ESPACIADO*/
+    font-size: 30px;    /* TAMAÑO DE LA FUENTE*/
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; /*VER SI SE PUEDE PREDETERMINADO*/
     font-weight: bold;
 }
 
 .download-meme{
-    background-color: rgb(44, 160, 44);
-    margin-top: 30px;
+    background-color: rgb(39, 175, 39);
+    margin-top: 25px;
     padding: 15px;
 }
 
 article{
     width: 100%;
     height: 450px;
-    background-color: black;
+    background-color: black; /* COLOR DE FONDO DE LA IMAGEN */
 }
 
+/* ASIDE SECTION */
+
 aside{
-    background-color: dimgrey;
-    color: white;
-    width: 250px;
+    background-color: var(--background-aside);
+    width: 280px;
     height: 100%;
     position: fixed;
     top: 0;
     right: 0;
     padding: 20px 15px;
-
+    font-size: 0.8em;
+    text-transform: uppercase;
 }
 
 /* ASIDE IMAGE */
 
-.aside-img{   /* ESTA EN DISPLAY NONE */
-    display: block;
+.aside-img{
+    display: none;
 }
 
 .aside-img h2, .aside-text h2{
@@ -111,47 +145,49 @@ fieldset, input, select{
     outline: none;
 }
 
-.url-img input, .meme-text input{   
-   width: 100%;
-   padding: 10px;
-   border-radius: 5px; /* HACERLO GLOBAL!! */
-   margin: 10px 0px;  /* HACERLO GLOBAL!! */
+input{
+    width: 100%;
+    background-color: var(--button-color-primary);
+    border-radius: var(--border-radius);
 }
 
-.background-color-img{
-    margin: 0px 0px 20px 0px;
+.url-title, .background-title, .filters-title{
+    font-weight: bolder;
+    margin: 25px 0px 15px 0px;
+}
+
+.url-img input, .meme-text input{   
+   padding: 10px;
+   margin: 15px 0px;
 }
 
 .background-color-container{
     display: flex;
     justify-content: space-between;
     margin-top: 10px;
-    width: 100%;
 }
 
-.background-color-container .background-color{
+.background-color{
     display: flex;
     align-items: center;
     padding-left: 5px;
     width: 48%;
-    background-color: gray;  /* HACERLO GLOBAL!! */
+    background-color: var(--button-color-primary);
+    border-radius: var(--border-radius);
 }
 
 .background-color-container span{
     margin-left: 5px;
 }
 
-.background-effect-container{
-    width: 48%;
-}
-
 .background-effect{
-    background-color: gray;
-    width: 100%;
+    background-color: var(--button-color-primary);
     padding: 10px;
+    color: var(--font-color-primary);
+    border-radius: var(--border-radius);
 }
 
-#color{
+input[type='color']{
 -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -162,12 +198,12 @@ fieldset, input, select{
   cursor: pointer;
 }
 
-#color::-webkit-color-swatch {
+input[type='color']::-webkit-color-swatch {
   border-radius: 50%;
-  border: 7px solid #000000;
+  border: 0px solid #000000;
 }
 
-#color::-moz-color-swatch {
+input[type='color']::-moz-color-swatch {
   border-radius: 50%;
   border: 7px solid #000000;
 }
@@ -175,19 +211,51 @@ fieldset, input, select{
 .filters{
     display: flex;
     flex-direction: column;
-    margin-top: 15px;
+    margin-bottom: 10px;
 }
 
-.filters label, .filters input{
-    margin: 5px 0px;
+input[type='range']{
+    height: 10px;
+    border-radius: 20px;
+    background-color: var(--button-color-primary);
+    appearance: none;
+    margin: 15px 0px;
 }
 
-.reset-filter{
-    margin-top: 20px;
-    padding: 10px;
+input[type='range'],
+input[type='range']::-webkit-slider-runnable-track,
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    background-color: var(--font-color-primary);
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    margin-top: -2px;
+  }
+
+input[type=range]::-moz-range-thumb {
+    background-color: var(--font-color-primary);
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+  }
+  
+  input[type=range]::-ms-thumb {
+    background-color: var(--font-color-primary);
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+  }
+
+input[type='range']:focus{
+    background-color: var(--button-color-hover);
 }
 
 /* ASIDE TEXT */
+
 
 #no-text {
     margin-bottom: 20px;
@@ -199,7 +267,7 @@ fieldset, input, select{
 }
 
 .font-container select, .spacing{
-    margin-top: 10px; /*Hacerlo global*/
+    margin-top: 10px; 
     padding: 10px 5px;
     width: 100%;
 }

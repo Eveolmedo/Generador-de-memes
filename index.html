@@ -20,7 +20,7 @@
                 <i class="fa-solid fa-font"></i>
                 Texto
             </button>
-            <button>
+            <button class="change-theme">
                 <i class="fa-regular fa-lightbulb"></i>
                 Modo oscuro
             </button>
@@ -38,37 +38,38 @@
                 <h2>BOTTOM TEXT</h2>
             </section>
         </div>
-        <button class="download-meme"><i class="fa-solid fa-download"></i>Descargar meme</button>
+        <button class="download-meme">
+            <i class="fa-solid fa-download"></i> 
+            Descargar meme
+        </button>
         <aside>
             <section class="aside-img">  
                 <h2>Imagen</h2>
                 <fieldset class="url-img">
-                    <label for="">
+                    <label for="" class="url-title">
                         URL                 
                     </label>
                     <input type="text" name="img" id="img">
                 </fieldset>
-                <label for="">
+                <label for="" class="background-title">
                     Fondo
                 </label>
                 <fieldset class="background-color-container">
                     <div class="background-color">
                         <input type="color" name="" id="color">
-                        <span>#exa</span>
+                        <span>#00191A</span>
                     </div>
-                    <div class="background-effect-container">
-                        <select name="" id="" class="background-effect">
-                            <option value="">Ninguno</option>
-                            <option value="clarify">Aclarar</option>
-                            <option value="darken">Oscurecer</option>
-                            <option value="difference">Diferencia</option>
-                            <option value="brightness">Luminosidad</option>
-                            <option value="multiply">Multiplicar</option>
-                        </select>
-                    </div>
+                    <select name="" id="" class="background-effect">
+                        <option value="">Ninguno</option>
+                        <option value="clarify">Aclarar</option>
+                        <option value="darken">Oscurecer</option>
+                        <option value="difference">Diferencia</option>
+                        <option value="brightness">Luminosidad</option>
+                        <option value="multiply">Multiplicar</option>
+                    </select>
                 </fieldset>
                 <fieldset class="filters">
-                    <label for="">
+                    <label for="" class="filters-title">
                         Filtros
                     </label>
                     <label for="">
@@ -102,9 +103,11 @@
                     <label for="">
                         Negativo
                     </label>
-                    <input type="range" name="invert" id="invert">
+                    <input type="range" name="invert" id="invert" class="range">
                 </fieldset>
-                <button class="reset-filter">Reestrablecer filtros</button>
+                <button class="reset-filter">
+                    Reestrablecer filtros
+                </button>
             </section>
             <section class="aside-text">
                 <h2>Texto</h2>
@@ -146,9 +149,15 @@
                     <fieldset class="align-container">
                         <input type="number" name="" id="" class="font-size">
                         <div>
-                            <button class="aling-button"><i class="fa-solid fa-align-left"></i></button>
-                            <button class="aling-button"><i class="fa-solid fa-align-center"></i></button>
-                            <button class="aling-button"><i class="fa-solid fa-align-right"></i></button>
+                            <button class="aling-button">
+                                <i class="fa-solid fa-align-left"></i>
+                            </button>
+                            <button class="aling-button">
+                                <i class="fa-solid fa-align-center"></i>
+                            </button>
+                            <button class="aling-button">
+                                <i class="fa-solid fa-align-right"></i>
+                            </button>
                         </div>
                     </fieldset>
                 </fieldset>
