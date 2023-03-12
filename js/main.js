@@ -8,3 +8,4 @@ $(".change-theme").addEventListener("click", () => {
         $("body").setAttribute("data-theme", "light-theme")
     }
 })
+
