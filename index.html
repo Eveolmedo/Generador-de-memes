@@ -117,8 +117,8 @@
                     </label>
                     <input type="text" name="top-text" id="top-text">
                 </fieldset>
-                <input type="checkbox" name="" id="no-text">
-                <label for="">
+                <input type="checkbox" name="">
+                <label for="" class="checkbox-description">
                     Sin texto superior
                 </label>
                 <fieldset class="meme-text">
@@ -127,15 +127,15 @@
                     </label>
                     <input type="text" name="bottom-text" id="bottom-text">
                 </fieldset>
-                <input type="checkbox" name="" id="no-text">
-                <label for="">
+                <input type="checkbox" name="">
+                <label for="" class="checkbox-description">
                     Sin texto inferior
                 </label>
                 <fieldset class="font-container">
                     <label for="">
                         Fuente
                     </label>
-                    <select name="" id="font">
+                    <select name="" id="font" class="font">
                         <option value="Arial">Arial</option>
                         <option value="Arial Black">Arial Black</option>
                         <option value="American Typewriter">American Typewriter</option>
@@ -161,22 +161,28 @@
                         </div>
                     </fieldset>
                 </fieldset>
-                <div class="text-color-container">
+                <fieldset class="text-color-container">
+                    <div class="text-color">
                     <label for="">
                         Color
                     </label>
-                    <input type="color" name="" id="color">
-                    <span>#exa</span>
-                </div>
-                <div class="text-background-container">
+                        <div>
+                            <input type="color" name="" id="color">
+                            <span>#00191A</span>
+                        </div>
+                    </div>
+                    <div class="text-color">
                     <label for="">
                         Fondo
                     </label>
-                    <input type="color" name="" id="color">
-                    <span>#exa</span>
-                </div>
+                        <div>
+                            <input type="color" name="" id="color">
+                            <span>#00191A</span>
+                        </div>
+                    </div>
+                </fieldset>
                 <input type="checkbox" name="" id="">
-                <label for="">
+                <label for="" class="checkbox-description">
                     Fondo transparente
                 </label>
                 <fieldset class="outline-container">
@@ -196,7 +202,7 @@
                 <label for="">
                     Interlineado
                 </label>
-                <select name="" id="" class="spacing">
+                <select name="" id="" class="interline">
                     <option value="0.8">0.8</option>
                     <option value="1">1</option>
                     <option value="1.2">1.2</option>
