@@ -31,14 +31,14 @@
     --button-color-hover: #6264A7;   
 }
 
-.hidden {
-    display: none;
-}
-
 body{
     background-color: var(--background-primary);
     color: var(--font-color-primary);
     font-family: var(--font-primary);
+}
+
+.hidden{
+    display: none;
 }
 
 /* HEADER SECTION */
@@ -95,11 +95,16 @@ main{
     margin-top: 20px;
 }
 
-.meme-text-container{
+.meme-top-text-container, .meme-bottom-text-container{
     padding: 30px;      /*ES EL ESPACIADO*/
     font-size: 30px;    /* TAMAÑO DE LA FUENTE*/
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; /*VER SI SE PUEDE PREDETERMINADO*/
     font-weight: bold;
+    background-color: white;
+}
+
+h2{        /*SACARLO!*/
+    color: black;
 }
 
 .download-meme{
@@ -108,10 +113,10 @@ main{
     padding: 15px;
 }
 
-article{
+.meme-img{
     width: 100%;
-    height: 450px;
-    background-color: black; /* COLOR DE FONDO DE LA IMAGEN */
+    height: 600px;
+    background-color: #000000;
 }
 
 /* ASIDE SECTION */
@@ -125,14 +130,15 @@ aside{
     right: 0;
     padding: 20px 15px;
     font-size: 0.8em;
-    text-transform: uppercase;
 }
+
+.fieldset-title{
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
 
 /* ASIDE IMAGE */
-
-.aside-img{
-    display: none;
-}
 
 .aside-img h2, .aside-text h2{
     display: flex;
@@ -149,6 +155,7 @@ input{
     width: 100%;
     background-color: var(--button-color-primary);
     border-radius: var(--border-radius);
+    color: var(--font-color-primary);
 }
 
 .url-title, .background-title, .filters-title{
@@ -188,7 +195,7 @@ span{
 }
 
 input[type='color']{
--webkit-appearance: none;
+  -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   background-color: transparent;
@@ -212,6 +219,11 @@ input[type='color']::-moz-color-swatch {
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.filters .fieldset-title{
+    margin: 20px 0px;
 }
 
 input[type='range']{

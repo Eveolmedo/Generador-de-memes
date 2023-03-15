@@ -12,30 +12,31 @@
     <header>
         <h1 class="title">Generador de Memes</h1>
         <nav class="header-buttons">
-            <button id="aside-img">
+            <button id="aside-img-button">
                 <i class="fa-regular fa-image"></i>
                 Imagen
             </button>
-            <button id="aside-text">
+            <button id="aside-text-button">
                 <i class="fa-solid fa-font"></i>
                 Texto
             </button>
-            <button class="change-theme">
+            <button id="change-theme">
                 <i class="fa-regular fa-lightbulb"></i>
-                Modo oscuro
+                <i class="fa-solid fa-lightbulb hidden" aria-hidden="true"></i>
+                Modo Oscuro
             </button>
         </nav>
     </header>
     <main>
         <div class="meme-container">
-            <section class="meme-text-container">
-                <h2>TOP TEXT</h2>
+            <section class="meme-top-text-container">
+                <h2 class="meme-top-text"></h2>
             </section>
             <article class="meme-img">
-                <img>
+                <img src="" alt="">
             </article>
-            <section class="meme-text-container">
-                <h2>BOTTOM TEXT</h2>
+            <section class="meme-bottom-text-container">
+                <h2 class="meme-bottom-text"></h2>
             </section>
         </div>
         <button class="download-meme">
@@ -46,18 +47,18 @@
             <section class="aside-img">  
                 <h2>Imagen</h2>
                 <fieldset class="url-img">
-                    <label for="" class="url-title">
+                    <label for="" class="fieldset-title">
                         URL                 
                     </label>
                     <input type="text" name="img" id="img">
                 </fieldset>
-                <label for="" class="background-title">
+                <label for="" class="fieldset-title">
                     Fondo
                 </label>
                 <fieldset class="background-color-container">
                     <div class="background-color">
                         <input type="color" name="" id="color">
-                        <span>#00191A</span>
+                        <span>#000000</span>
                     </div>
                     <select name="" id="" class="background-effect">
                         <option value="">Ninguno</option>
@@ -69,7 +70,7 @@
                     </select>
                 </fieldset>
                 <fieldset class="filters">
-                    <label for="" class="filters-title">
+                    <label for="" class="fieldset-title">
                         Filtros
                     </label>
                     <label for="">
@@ -99,7 +100,7 @@
                     <label for="">
                         Saturado
                     </label>
-                    <input type="range" name="saturation" id="saturation">
+                    <input type="range" name="saturate" id="saturate">
                     <label for="">
                         Negativo
                     </label>
@@ -109,33 +110,33 @@
                     Reestrablecer filtros
                 </button>
             </section>
-            <section class="aside-text">
+            <section class="aside-text hidden" aria-hidden="true">
                 <h2>Texto</h2>
                 <fieldset class="meme-text">
-                    <label for="">
+                    <label for="" class="fieldset-title">
                         Superior
                     </label>
                     <input type="text" name="top-text" id="top-text">
                 </fieldset>
-                <input type="checkbox" name="">
+                <input type="checkbox" name="" id="checkbox-top">
                 <label for="" class="checkbox-description">
                     Sin texto superior
                 </label>
                 <fieldset class="meme-text">
-                    <label for="">
+                    <label for="" class="fieldset-title">
                         Inferior
                     </label>
                     <input type="text" name="bottom-text" id="bottom-text">
                 </fieldset>
-                <input type="checkbox" name="">
+                <input type="checkbox" name="" id="checkbox-bottom">
                 <label for="" class="checkbox-description">
                     Sin texto inferior
                 </label>
                 <fieldset class="font-container">
-                    <label for="">
+                    <label for="" class="fieldset-title">
                         Fuente
                     </label>
-                    <select name="" id="font" class="font">
+                    <select name="" id="font" class="font" value="Helvetica">
                         <option value="Arial">Arial</option>
                         <option value="Arial Black">Arial Black</option>
                         <option value="American Typewriter">American Typewriter</option>
@@ -163,7 +164,7 @@
                 </fieldset>
                 <fieldset class="text-color-container">
                     <div class="text-color">
-                    <label for="">
+                    <label for="" class="fieldset-title">
                         Color
                     </label>
                         <div>
@@ -172,7 +173,7 @@
                         </div>
                     </div>
                     <div class="text-color">
-                    <label for="">
+                    <label for="" class="fieldset-title">
                         Fondo
                     </label>
                         <div>
@@ -181,12 +182,12 @@
                         </div>
                     </div>
                 </fieldset>
-                <input type="checkbox" name="" id="">
+                <input type="checkbox" name="" id="transparent-background">
                 <label for="" class="checkbox-description">
                     Fondo transparente
                 </label>
                 <fieldset class="outline-container">
-                    <label for="">
+                    <label for="" class="fieldset-title">
                         Contorno
                     </label>
                     <div>
@@ -195,11 +196,11 @@
                         <button class="outline">Oscuro</button>
                     </div>    
                 </fieldset>
-                <label for="">
+                <label for="" class="fieldset-title">
                     Espaciado
                 </label>
                 <input type="number" name="" id="" class="spacing">
-                <label for="">
+                <label for="" class="fieldset-title">
                     Interlineado
                 </label>
                 <select name="" id="" class="interline">
