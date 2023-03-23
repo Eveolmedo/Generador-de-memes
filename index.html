@@ -32,12 +32,10 @@
             <section class="meme-top-text-container">
                 <h2 class="meme-top-text"></h2>
             </section>
-            <article class="meme-img">
-                <img src="" alt="">
-            </article>
+            <article class="meme-img"></article>
             <section class="meme-bottom-text-container">
                 <h2 class="meme-bottom-text"></h2>
-            </section>
+            </section>  
         </div>
         <button class="download-meme">
             <i class="fa-solid fa-download"></i> 
@@ -45,7 +43,7 @@
         </button>
         <aside>
             <section class="aside-img">  
-                <h2>Imagen</h2>
+                <h3>Imagen</h3>
                 <fieldset class="url-img">
                     <label for="" class="fieldset-title">
                         URL                 
@@ -76,7 +74,7 @@
                     <label for="">
                         Brillo
                     </label>
-                    <input type="range" name="brightness" id="brightness">
+                    <input type="range" name="brightness" id="brightness" min="0" max="1">
                     <label for="">
                         Opacidad
                     </label>
@@ -111,7 +109,7 @@
                 </button>
             </section>
             <section class="aside-text hidden" aria-hidden="true">
-                <h2>Texto</h2>
+                <h3>Texto</h3>
                 <fieldset class="meme-text">
                     <label for="" class="fieldset-title">
                         Superior
@@ -136,7 +134,7 @@
                     <label for="" class="fieldset-title">
                         Fuente
                     </label>
-                    <select name="" id="font" class="font" value="Helvetica">
+                    <select name="" id="font" class="font" value="Impact">
                         <option value="Arial">Arial</option>
                         <option value="Arial Black">Arial Black</option>
                         <option value="American Typewriter">American Typewriter</option>
@@ -148,15 +146,15 @@
                         <option value="Times New Roman">Times New Roman</option>
                     </select>
                     <fieldset class="align-container">
-                        <input type="number" name="" id="" class="font-size">
+                        <input type="number" name="" id="font-size" class="font-size" min="12">
                         <div>
-                            <button class="aling-button">
+                            <button class="aling-button left">
                                 <i class="fa-solid fa-align-left"></i>
                             </button>
-                            <button class="aling-button">
+                            <button class="aling-button center">
                                 <i class="fa-solid fa-align-center"></i>
                             </button>
-                            <button class="aling-button">
+                            <button class="aling-button right">
                                 <i class="fa-solid fa-align-right"></i>
                             </button>
                         </div>
@@ -168,8 +166,8 @@
                         Color
                     </label>
                         <div>
-                            <input type="color" name="" id="color">
-                            <span>#00191A</span>
+                            <input type="color" name="" id="font-color">
+                            <span id="font-color-span">#000000</span>
                         </div>
                     </div>
                     <div class="text-color">
@@ -177,8 +175,8 @@
                         Fondo
                     </label>
                         <div>
-                            <input type="color" name="" id="color">
-                            <span>#00191A</span>
+                            <input type="color" name="" id="section-color">
+                            <span id="section-color-span">#FFFFFF</span>
                         </div>
                     </div>
                 </fieldset>
@@ -199,7 +197,7 @@
                 <label for="" class="fieldset-title">
                     Espaciado
                 </label>
-                <input type="number" name="" id="" class="spacing">
+                <input type="number" name="" id="" class="spacing" min="10" max="50">
                 <label for="" class="fieldset-title">
                     Interlineado
                 </label>

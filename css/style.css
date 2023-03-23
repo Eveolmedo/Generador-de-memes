@@ -86,21 +86,35 @@ main{
 }
 
 .meme-container{
+    width: 100%;
+    max-width: 630px;
+    height: 600px;
+    margin: 100px 0px 40px 0px;
     display: flex;
     flex-direction: column;
-    text-align: center;
-    width: 100%;
-    max-width: 600px;
+    position: relative;
+}
+
+.meme-img{
     height: 600px;
-    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-color: #000000;
 }
 
 .meme-top-text-container, .meme-bottom-text-container{
-    padding: 30px;      /*ES EL ESPACIADO*/
-    font-size: 30px;    /* TAMAÑO DE LA FUENTE*/
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; /*VER SI SE PUEDE PREDETERMINADO*/
-    font-weight: bold;
-    background-color: white;
+    font-size: 30px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color: #ffffff;
+}
+
+.meme-top-text-container{
+    width: 100%;
+}
+
+.meme-bottom-text-container{
+    width: 100%;
 }
 
 h2{        /*SACARLO!*/
@@ -109,14 +123,7 @@ h2{        /*SACARLO!*/
 
 .download-meme{
     background-color: rgb(39, 175, 39);
-    margin-top: 25px;
     padding: 15px;
-}
-
-.meme-img{
-    width: 100%;
-    height: 600px;
-    background-color: #000000;
 }
 
 /* ASIDE SECTION */
@@ -132,6 +139,7 @@ aside{
     font-size: 0.8em;
 }
 
+
 .fieldset-title{
     text-transform: uppercase;
     font-weight: bold;
@@ -140,10 +148,11 @@ aside{
 
 /* ASIDE IMAGE */
 
-.aside-img h2, .aside-text h2{
+.aside-img h3, .aside-text h3{
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
+    font-size: 1.5em;
 }
 
 fieldset, input, select{
@@ -314,6 +323,10 @@ input[type='checkbox']{
 
 .aling-button{
     width: 36px;
+}
+
+.aling-button:focus, .outline-container div button:focus{
+    background-color: var(--button-color-hover);
 }
 
 .text-color-container{
