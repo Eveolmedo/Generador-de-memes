@@ -75,15 +75,22 @@ $("#color").addEventListener("input", () => {
     $("span").innerText = $("#color").value.toUpperCase()
 })
 
+$(".background-effect").addEventListener("click", () => {
+    $(".meme-img").style.backgroundBlendMode = $(".background-effect").value
+})
+
+
 // constantes porque usaba mucho estas etiquetas
 
 const containerTop = $(".meme-top-text-container")
 const containerBottom = $(".meme-bottom-text-container")
+const topText = $(".meme-top-text")
+const bottomText = $(".meme-bottom-text")
 
 // TEXT
 
 $("#top-text").addEventListener("input", () => {
-    $(".meme-top-text").innerText = $("#top-text").value.toUpperCase()
+    topText.innerText = $("#top-text").value.toUpperCase()
 })
 
 $("#checkbox-top").addEventListener("change", (e) => {
@@ -103,22 +110,22 @@ $("#checkbox-bottom").addEventListener("change", (e) => {
 })
 
 $("#bottom-text").addEventListener("input", () => {
-    $(".meme-bottom-text").innerText = $("#bottom-text").value.toUpperCase()
+    bottomText.innerText = $("#bottom-text").value.toUpperCase()
 })
 
 
 // FONT FAMILY
 
 $("#font").addEventListener("input", () => {
-    $(".meme-top-text").style.fontFamily = $("#font").value              
-    $(".meme-bottom-text").style.fontFamily = $("#font").value            
+    topText.style.fontFamily = $("#font").value              
+    bottomText.style.fontFamily = $("#font").value            
 })
 
 // FONT SIZE
 
 $("#font-size").addEventListener("input", () => {
-    $(".meme-top-text").style.fontSize = `${$("#font-size").value}px`             
-    $(".meme-bottom-text").style.fontSize = `${$("#font-size").value}px`
+    topText.style.fontSize = `${$("#font-size").value}px`             
+    bottomText.style.fontSize = `${$("#font-size").value}px`
 })
 
 $(".left").addEventListener("click", () => {
@@ -136,8 +143,8 @@ $(".right").addEventListener("click", () => {
 // FONT COLOR
 
 $("#font-color").addEventListener("input", () => {
-    $(".meme-top-text").style.color = $("#font-color").value       
-    $(".meme-bottom-text").style.color = $("#font-color").value
+    topText.style.color = $("#font-color").value       
+    bottomText.style.color = $("#font-color").value
     $("#font-color-span").innerText = $("#font-color").value.toUpperCase()
 })
 
@@ -170,35 +177,72 @@ $("#transparent-background").addEventListener("change", (e) => {
 
 
 $(".spacing").addEventListener("input", () => {
-    $(".meme-top-text").style.padding = `${$(".spacing").value}px`                       
-    $(".meme-bottom-text").style.padding = `${$(".spacing").value}px`
+    topText.style.padding = `${$(".spacing").value}px`                       
+    bottomText.style.padding = `${$(".spacing").value}px`
 })                                                                                           
 
 $(".interline").addEventListener("input", () => {
-    $(".meme-top-text").style.margin = `${$(".interline").value}px`
-    $(".meme-bottom-text").style.margin = `${$(".interline").value}px`                         
+    topText.style.margin = `${$(".interline").value}px 0px`
+    bottomText.style.margin = `${$(".interline").value}px 0px`                         
 })
 
 
+$(".shadow-none").addEventListener("click", () => {
+    topText.style.textShadow = "none"
+    bottomText.style.textShadow = "none"
+})
 
-$("#brightness").addEventListener("input", () => {
+$(".shadow-black").addEventListener("click", () => {
+    topText.style.textShadow = "rgb(0, 0, 0) 2px 2px, rgb(0, 0, 0) -2px 2px, rgb(0, 0, 0) 2px -2px, rgb(0, 0, 0) -2px -2px"
+    bottomText.style.textShadow = "rgb(0, 0, 0) 2px 2px, rgb(0, 0, 0) -2px 2px, rgb(0, 0, 0) 2px -2px, rgb(0, 0, 0) -2px -2px"
+})
+
+$(".shadow-white").addEventListener("click", () => {
+    topText.style.textShadow = "rgb(255, 255, 255) 2px 2px, rgb(255, 255, 255) -2px 2px, rgb(255, 255, 255) 2px -2px, rgb(255, 255, 255) -2px -2px"
+    bottomText.style.textShadow = "rgb(255, 255, 255) 2px 2px, rgb(255, 255, 255) -2px 2px, rgb(255, 255, 255) 2px -2px, rgb(255, 255, 255) -2px -2px"
+})
+
+$("#brightness").addEventListener("click", () => {
     const rangeValue = $("#brightness").value
-    $("meme-img").style.filter = `brightness(${rangeValue})`
+    $(".meme-img").style.filter = `brightness(${rangeValue})`
 })
 
-$("#opacity").addEventListener("input", () => {
+$("#opacity").addEventListener("click", () => {
     const rangeValue = $("#opacity").value
-    $("meme-img").style.filter = `opacity(${rangeValue})`
+    $(".meme-img").style.filter = `opacity(${rangeValue})`
 })
 
-$("#contrast").addEventListener("input", () => {
+$("#contrast").addEventListener("click", () => {                                      // puedo cambiarles el id
     const rangeValue = $("#contrast").value
-    $("meme-img").style.filter = `contrast(${rangeValue})`
+    $(".meme-img").style.filter = `contrast(${rangeValue}%)`
 })
 
-$("#brightness").addEventListener("input", () => {
-    const rangeValue = $("#brightness").value
-    $("meme-img").style.filter = `brightness(${rangeValue})`
+$("#blur").addEventListener("click", () => {
+    const rangeValue = $("#blur").value
+    $(".meme-img").style.filter = `blur(${rangeValue}px)`
 })
 
+$("#grayscale").addEventListener("click", () => {
+    const rangeValue = $("#grayscale").value
+    $(".meme-img").style.filter = `grayscale(${rangeValue}%)`
+})
 
+$("#sepia").addEventListener("click", () => {
+    const rangeValue = $("#sepia").value
+    $(".meme-img").style.filter = `sepia(${rangeValue}%)`
+})
+
+$("#hue-rotation").addEventListener("click", () => {
+    const rangeValue = $("#hue-rotation").value
+    $(".meme-img").style.filter = `hue-rotate(${rangeValue}deg)`
+})
+
+$("#saturation").addEventListener("click", () => {
+    const rangeValue = $("#saturation").value
+    $(".meme-img").style.filter = `saturation(${rangeValue}%)`
+})
+
+$("#invert").addEventListener("click", () => {
+    const rangeValue = $("#invert").value
+    $(".meme-img").style.filter = `invert(${rangeValue})`
+})

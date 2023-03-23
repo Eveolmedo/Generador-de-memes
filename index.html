@@ -74,35 +74,39 @@
                     <label for="">
                         Brillo
                     </label>
-                    <input type="range" name="brightness" id="brightness" min="0" max="1">
+                    <input type="range" name="brightness" id="brightness" min="0" max="1" step="0.1" value="1">
                     <label for="">
                         Opacidad
                     </label>
-                    <input type="range" name="opacity" id="opacity">
+                    <input type="range" name="opacity" id="opacity" min="0" max="1" step="0.1" value="1">
                     <label for="">
                         Contraste
                     </label>
-                    <input type="range" name="contrast" id="contrast">
+                    <input type="range" name="contrast" id="contrast" min="100" max="1000" step="1" value="100">
                     <label for="">
                         Desenfoque
                     </label>
-                    <input type="range" name="blur" id="blur">
+                    <input type="range" name="blur" id="blur" min="0" max="10" step="0.1" value="0">
                     <label for="">
                         Escala de grises
                     </label>
-                    <input type="range" name="grayscale" id="grayscale">
+                    <input type="range" name="grayscale" id="grayscale" min="0" max="100" step="1" value="0">
+                    <label for="">
+                        Sepia
+                    </label>
+                    <input type="range" name="sepia" id="sepia" min="0" max="100" step="1" value="0">
                     <label for="">
                         HUE
                     </label>
-                    <input type="range" name="hue-rotation" id="hue-rotation">
+                    <input type="range" name="hue-rotation" id="hue-rotation" min="0" max="359" step="1" value="0">
                     <label for="">
                         Saturado
                     </label>
-                    <input type="range" name="saturate" id="saturate">
+                    <input type="range" name="saturation" id="saturation" min="100" max="1000" step="10" value="100">
                     <label for="">
                         Negativo
                     </label>
-                    <input type="range" name="invert" id="invert" class="range">
+                    <input type="range" name="invert" id="invert" min="0" max="1" step="0.1" value="0">
                 </fieldset>
                 <button class="reset-filter">
                     Reestrablecer filtros
@@ -189,9 +193,9 @@
                         Contorno
                     </label>
                     <div>
-                        <button class="outline">Ninguno</button>
-                        <button class="outline">Claro</button>
-                        <button class="outline">Oscuro</button>
+                        <button class="outline shadow-none">Ninguno</button>
+                        <button class="outline shadow-white">Claro</button>
+                        <button class="outline shadow-black">Oscuro</button>
                     </div>    
                 </fieldset>
                 <label for="" class="fieldset-title">

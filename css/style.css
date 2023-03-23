@@ -87,8 +87,8 @@ main{
 
 .meme-container{
     width: 100%;
-    max-width: 630px;
-    height: 600px;
+    height: 650px;
+    max-width: 620px;
     margin: 100px 0px 40px 0px;
     display: flex;
     flex-direction: column;
@@ -96,7 +96,7 @@ main{
 }
 
 .meme-img{
-    height: 600px;
+    height: 650px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -118,7 +118,7 @@ main{
 }
 
 h2{        /*SACARLO!*/
-    color: black;
+    color: #000000;
 }
 
 .download-meme{
