@@ -37,6 +37,10 @@ body{
     font-family: var(--font-primary);
 }
 
+body::-webkit-scrollbar {
+    width: 0px;           
+}
+  
 .hidden{
     display: none;
 }
@@ -61,6 +65,7 @@ button{
     border: none;
     border-radius: var(--border-radius);
     padding: 10px;
+    cursor: pointer;
 }
 
 .header-buttons{
@@ -72,7 +77,7 @@ button{
     background: none;
 }
 
-.header-buttons button:hover{
+.header-buttons button:hover, aside input:hover, aside button:hover, aside select:hover{
     background-color: var(--button-color-hover);
 }
 
@@ -83,24 +88,22 @@ main{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 40px;
 }
 
 .meme-container{
     width: 100%;
-    height: 650px;
-    max-width: 620px;
-    margin: 100px 0px 40px 0px;
+    max-width: 600px;
+    height: 600px;
     display: flex;
     flex-direction: column;
     position: relative;
+    background-color: #000000;
 }
 
 .meme-img{
-    height: 650px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    background-color: #000000;
+    height: 100%;
+    flex-grow: 1;
 }
 
 .meme-top-text-container, .meme-bottom-text-container{
@@ -124,6 +127,11 @@ h2{        /*SACARLO!*/
 .download-meme{
     background-color: rgb(39, 175, 39);
     padding: 15px;
+    margin-top: 20px;
+}
+
+.download-meme:hover{
+    background-color: rgb(29, 201, 29);
 }
 
 /* ASIDE SECTION */
@@ -135,10 +143,32 @@ aside{
     position: fixed;
     top: 0;
     right: 0;
-    padding: 20px 15px;
+    padding: 15px 15px;
     font-size: 0.8em;
+    overflow-y: scroll;
 }
 
+aside::-webkit-scrollbar {
+    width: 10px;            
+}
+  
+aside::-webkit-scrollbar-track {
+    background: var(--background-aside);      
+}
+  
+aside::-webkit-scrollbar-thumb {
+    background-color: var(--background-secondary);   
+    border-radius: 20px;      
+    border: 3px solid var(--background-aside);  
+}
+
+.button-close-aside{
+    background-color: var(--background-aside);
+    padding: 5px 8px;
+    position: fixed;
+    top: 10px;
+    right: 15px;
+}
 
 .fieldset-title{
     text-transform: uppercase;
@@ -325,10 +355,6 @@ input[type='checkbox']{
     width: 36px;
 }
 
-.aling-button:focus, .outline-container div button:focus{
-    background-color: var(--button-color-hover);
-}
-
 .text-color-container{
     margin-top: 10px;
     display: flex;
@@ -354,6 +380,9 @@ input[type='checkbox']{
     margin: 10px 0px 20px 0px;
 }
 
+@media (max-width: 1100px){
+    
+}
 
 
 

@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="crossorigin="anonymous"referrerpolicy="no-referrer"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js" integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js" integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ==" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/style.css">
     <title>Generador de memes</title>
 </head>
@@ -42,7 +44,10 @@
             Descargar meme
         </button>
         <aside>
-            <section class="aside-img">  
+            <button class="button-close-aside">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <section class="aside-img">
                 <h3>Imagen</h3>
                 <fieldset class="url-img">
                     <label for="" class="fieldset-title">
@@ -56,7 +61,7 @@
                 <fieldset class="background-color-container">
                     <div class="background-color">
                         <input type="color" name="" id="color">
-                        <span>#000000</span>
+                        <span>#FFFFFF</span>
                     </div>
                     <select name="" id="" class="background-effect">
                         <option value="">Ninguno</option>
@@ -102,7 +107,7 @@
                     <label for="">
                         Saturado
                     </label>
-                    <input type="range" name="saturation" id="saturation" min="100" max="1000" step="10" value="100">
+                    <input type="range" name="saturate" id="saturate" min="100" max="1000" step="10" value="100">
                     <label for="">
                         Negativo
                     </label>

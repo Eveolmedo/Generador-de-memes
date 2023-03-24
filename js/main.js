@@ -24,7 +24,7 @@ const initializeProject = () => {
     $(".meme-top-text").innerText = $("#top-text").value
     $("#bottom-text").value = "BOTTOM TEXT"                                
     $(".meme-bottom-text").innerText =  $("#bottom-text").value
-    $("#color").value = "#000000"
+    $("#color").value = "#FFFFFF"
     $("#font").value = "Impact"
     $("#font-color").value = "#000000"
     $("#section-color").value = "#FFFFFF"
@@ -47,16 +47,20 @@ const showElement = (element) => element.classList.remove("hidden")
 
 // ASIDE
 
-// FALTA EL BOTON X
+$(".button-close-aside").addEventListener("click", () => {
+    hideElement($("aside"))
+})
 
 $("#aside-text-button").addEventListener("click", () => {
     showElement($(".aside-text"))
     hideElement($(".aside-img"))
+    showElement($("aside"))
 })
 
 $("#aside-img-button").addEventListener("click", () => {
     showElement($(".aside-img"))
     hideElement($(".aside-text"))
+    showElement($("aside"))
 })
 
 // IMAGE
@@ -154,7 +158,6 @@ $("#section-color").addEventListener("input", () => {
     $("#section-color-span").innerText = $("#section-color").value.toUpperCase()     
 })
 
-
 $("#transparent-background").addEventListener("change", (e) => {
     if (e.target.checked){
         containerTop.style.backgroundColor = "transparent"
@@ -175,7 +178,6 @@ $("#transparent-background").addEventListener("change", (e) => {
     }
 })
 
-
 $(".spacing").addEventListener("input", () => {
     topText.style.padding = `${$(".spacing").value}px`                       
     bottomText.style.padding = `${$(".spacing").value}px`
@@ -185,7 +187,6 @@ $(".interline").addEventListener("input", () => {
     topText.style.margin = `${$(".interline").value}px 0px`
     bottomText.style.margin = `${$(".interline").value}px 0px`                         
 })
-
 
 $(".shadow-none").addEventListener("click", () => {
     topText.style.textShadow = "none"
@@ -237,12 +238,33 @@ $("#hue-rotation").addEventListener("click", () => {
     $(".meme-img").style.filter = `hue-rotate(${rangeValue}deg)`
 })
 
-$("#saturation").addEventListener("click", () => {
-    const rangeValue = $("#saturation").value
-    $(".meme-img").style.filter = `saturation(${rangeValue}%)`
+$("#saturate").addEventListener("click", () => {
+    const rangeValue = $("#saturate").value
+    $(".meme-img").style.filter = `saturate(${rangeValue}%)`
 })
 
 $("#invert").addEventListener("click", () => {
     const rangeValue = $("#invert").value
     $(".meme-img").style.filter = `invert(${rangeValue})`
 })
+
+$(".reset-filter").addEventListener("click", () => {
+    $(".meme-img").style.filter = `brightness(${$("#brightness").value = 1})`
+    $(".meme-img").style.filter = `opacity(${$("#opacity").value = 1})`
+    $(".meme-img").style.filter = `contrast(${$("#contrast").value = 100}%)`
+    $(".meme-img").style.filter = `blur(${$("#blur").value = 0}px)`
+    $(".meme-img").style.filter = `grayscale(${$("#grayscale").value = 0}%)`
+    $(".meme-img").style.filter = `sepia(${$("#sepia").value = 0}%)`
+    $(".meme-img").style.filter = `hue-rotate(${$("#hue-rotation").value = 0}deg)`
+    $(".meme-img").style.filter = `saturate(${$("#saturate").value = 100}%)`
+    $(".meme-img").style.filter = `invert(${$("#invert").value = 0})`
+})
+
+
+const downloadMeme = () => {
+    domtoimage.toBlob($(".meme-container")).then((blob) => {
+        saveAs(blob, "mi-meme.png")
+      })
+}
+
+$(".download-meme").addEventListener("click", downloadMeme)
