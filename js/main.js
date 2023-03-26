@@ -29,7 +29,7 @@ const initializeProject = () => {
     $("#font-color").value = "#000000"
     $("#section-color").value = "#FFFFFF"
     $("#font-size").value = 40
-    $(".spacing").value = 35
+    $(".spacing").value = 30
     $(".meme-top-text").style.padding = `${$(".spacing").value}px`
     $(".meme-bottom-text").style.padding = `${$(".spacing").value}px`
     $(".interline").value = 1.2
@@ -260,6 +260,31 @@ $(".reset-filter").addEventListener("click", () => {
     $(".meme-img").style.filter = `invert(${$("#invert").value = 0})`
 })
 
+const mediaqueryList = window.matchMedia("(max-width: 500px)");
+
+mediaqueryList.addListener(function(e) {
+    if (e.matches) {
+        $("#font-size").value = 25
+        topText.style.fontSize = `${$("#font-size").value}px`
+        bottomText.style.fontSize = `${$("#font-size").value}px`
+    } else {
+        $("#font-size").value = 40
+        topText.style.fontSize = `${$("#font-size").value}px`
+        bottomText.style.fontSize = `${$("#font-size").value}px`
+    }
+});
+
+mediaqueryList.addListener(function(e) {
+    if (e.matches) {
+        $(".spacing").value = 15
+        topText.style.padding= `${$(".spacing").value}px`     
+        bottomText.style.padding= `${$(".spacing").value}px`
+    } else {
+        $(".spacing").value = 30
+        topText.style.padding= `${$(".spacing").value}px`
+        bottomText.style.padding= `${$(".spacing").value}px`
+    }
+});
 
 const downloadMeme = () => {
     domtoimage.toBlob($(".meme-container")).then((blob) => {
