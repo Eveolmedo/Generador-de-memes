@@ -14,8 +14,8 @@
 
 ##### El proyecto es responsivo, puede visualizarse tambien en tablets y celulares.
 
-<img src = "./img/proyecto-celular.png" width = 150px> 
-<img src = "./img/proyecto-celular2.png" width = 150px> 
+<img src = "./img/proyecto-celular.png" width = 150px>
+<img src = "./img/captura-celular.jpg" width = 150px> 
 
 ##### Lenguajes utilizados y aprendidos:
 - ##### HTML
