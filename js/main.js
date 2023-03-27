@@ -1,20 +1,24 @@
 const $ = (selector) => document.querySelector(selector)
+const hideElement = (element) => element.classList.add("hidden")
+const showElement = (element) => element.classList.remove("hidden")
+const containerTop = $(".meme-top-text-container")
+const containerBottom = $(".meme-bottom-text-container")
+const topText = $(".meme-top-text")
+const bottomText = $(".meme-bottom-text")
 
 // THEME
 
-$("#change-theme").addEventListener("click", () => {
-    const currentTheme = $("body").getAttribute("data-theme")
-    if (currentTheme) {
-        $("body").removeAttribute("data-theme", "light-theme")
-        $("#change-theme").innerText = "Modo Oscuro"
-        $("#lightbulb-off").classList.remove("hidden")
-        $("#lightbulb-on").classList.add("hidden")
-    } else {
-        $("body").setAttribute("data-theme", "light-theme")
-        $("#change-theme").innerText = "Modo Claro"
-        $("#lightbulb-off").classList.add("hidden")
-        $("#lightbulb-on").classList.remove("hidden")
-    }
+$(".dark-mode").addEventListener("click", () => {
+    $("body").setAttribute("data-theme", "light-theme")
+    hideElement($(".lightbulb-off"))
+    showElement($(".lightbulb-on"))
+})
+
+$(".light-mode").addEventListener("click", () => {
+    $("body").removeAttribute("data-theme", "light-theme")
+    showElement($(".lightbulb-off"))
+    hideElement($(".lightbulb-on"))
+
 })
 
 // INITIALIZE 
@@ -29,7 +33,7 @@ const initializeProject = () => {
     $("#font-color").value = "#000000"
     $("#section-color").value = "#FFFFFF"
     $("#font-size").value = 40
-    $(".spacing").value = 30
+    $(".spacing").innerText = $(".spacing").value
     $(".meme-top-text").style.padding = `${$(".spacing").value}px`
     $(".meme-bottom-text").style.padding = `${$(".spacing").value}px`
     $(".interline").value = 1.2
@@ -41,9 +45,6 @@ const initializeProject = () => {
 initializeProject()
 
 window.addEventListener("load", initializeProject)
-
-const hideElement = (element) => element.classList.add("hidden")
-const showElement = (element) => element.classList.remove("hidden")
 
 // ASIDE
 
@@ -82,14 +83,6 @@ $("#color").addEventListener("input", () => {
 $(".background-effect").addEventListener("click", () => {
     $(".meme-img").style.backgroundBlendMode = $(".background-effect").value
 })
-
-
-// constantes porque usaba mucho estas etiquetas
-
-const containerTop = $(".meme-top-text-container")
-const containerBottom = $(".meme-bottom-text-container")
-const topText = $(".meme-top-text")
-const bottomText = $(".meme-bottom-text")
 
 // TEXT
 
@@ -179,7 +172,7 @@ $("#transparent-background").addEventListener("change", (e) => {
 })
 
 $(".spacing").addEventListener("input", () => {
-    topText.style.padding = `${$(".spacing").value}px`                       
+    topText.style.padding = `${$(".spacing").value}px`
     bottomText.style.padding = `${$(".spacing").value}px`
 })                                                                                           
 
@@ -213,7 +206,7 @@ $("#opacity").addEventListener("click", () => {
     $(".meme-img").style.filter = `opacity(${rangeValue})`
 })
 
-$("#contrast").addEventListener("click", () => {                                      // puedo cambiarles el id
+$("#contrast").addEventListener("click", () => {                                      
     const rangeValue = $("#contrast").value
     $(".meme-img").style.filter = `contrast(${rangeValue}%)`
 })
@@ -261,18 +254,6 @@ $(".reset-filter").addEventListener("click", () => {
 })
 
 const mediaqueryList = window.matchMedia("(max-width: 500px)");
-
-mediaqueryList.addListener(function(e) {
-    if (e.matches) {
-        $("#font-size").value = 25
-        topText.style.fontSize = `${$("#font-size").value}px`
-        bottomText.style.fontSize = `${$("#font-size").value}px`
-    } else {
-        $("#font-size").value = 40
-        topText.style.fontSize = `${$("#font-size").value}px`
-        bottomText.style.fontSize = `${$("#font-size").value}px`
-    }
-});
 
 mediaqueryList.addListener(function(e) {
     if (e.matches) {
