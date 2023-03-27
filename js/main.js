@@ -108,7 +108,6 @@ $("#bottom-text").addEventListener("input", () => {
     bottomText.innerText = $("#bottom-text").value.toUpperCase()
 })
 
-
 // FONT FAMILY
 
 $("#font").addEventListener("input", () => {
@@ -149,6 +148,8 @@ $("#section-color").addEventListener("input", () => {
     $("#section-color-span").innerText = $("#section-color").value.toUpperCase()     
 })
 
+// HIDE TEXT CONTAINER
+
 $("#transparent-background").addEventListener("change", (e) => {
     if (e.target.checked){
         containerTop.style.backgroundColor = "transparent"
@@ -169,15 +170,21 @@ $("#transparent-background").addEventListener("change", (e) => {
     }
 })
 
+// PADDING
+
 $(".spacing").addEventListener("input", () => {
     topText.style.padding = `${$(".spacing").value}px`
     bottomText.style.padding = `${$(".spacing").value}px`
-})                                                                                           
+})     
+
+// MARGIN
 
 $(".interline").addEventListener("input", () => {
     topText.style.margin = `${$(".interline").value}px 0px`
     bottomText.style.margin = `${$(".interline").value}px 0px`                         
 })
+
+// BORDER
 
 $(".shadow-none").addEventListener("click", () => {
     topText.style.textShadow = "none"
@@ -193,6 +200,8 @@ $(".shadow-white").addEventListener("click", () => {
     topText.style.textShadow = "rgb(255, 255, 255) 2px 2px, rgb(255, 255, 255) -2px 2px, rgb(255, 255, 255) 2px -2px, rgb(255, 255, 255) -2px -2px"
     bottomText.style.textShadow = "rgb(255, 255, 255) 2px 2px, rgb(255, 255, 255) -2px 2px, rgb(255, 255, 255) 2px -2px, rgb(255, 255, 255) -2px -2px"
 })
+
+// FILTERS
 
 $("#brightness").addEventListener("input", () => {
     $(".meme-img").style.filter = `brightness(${$("#brightness").value})`
@@ -242,6 +251,8 @@ $(".reset-filter").addEventListener("click", () => {
     $(".meme-img").style.filter = `invert(${$("#invert").value = 0})`
 })
 
+// MEDIA QUERIES
+
 const mediaQuery = window.matchMedia("(max-width: 700px)");
 mediaQuery.addListener(handleMediaChange);
 
@@ -264,6 +275,8 @@ function handleMediaChange (e) {
 }
 
 handleMediaChange(mediaQuery);
+
+// BUTTON DOWNLOAD 
 
 const downloadMeme = () => {
     domtoimage.toBlob($(".meme-container")).then((blob) => {

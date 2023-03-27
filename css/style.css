@@ -31,6 +31,8 @@
     --button-color-hover: #6264A7;   
 }
 
+/* BODY SECTION */
+
 body{
     background-color: var(--background-primary);
     color: var(--font-color-primary);
@@ -118,7 +120,7 @@ main{
     width: 100%;
 }
 
-h2{        /*SACARLO!*/
+h2{
     color: #000000;
 }
 
@@ -383,6 +385,8 @@ input[type='checkbox']{
     margin: 10px 0px 20px 0px;
 }
 
+/* MEDIA QUERIES */
+
 @media (max-width: 1200px){
     .button-close-aside{
         display: block;
@@ -421,7 +425,3 @@ input[type='checkbox']{
         padding: 10px;
     }
 }
-
-
-
-
