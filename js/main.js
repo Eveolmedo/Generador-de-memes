@@ -32,8 +32,6 @@ const initializeProject = () => {
     $("#font").value = "Impact"
     $("#font-color").value = "#000000"
     $("#section-color").value = "#FFFFFF"
-    $("#font-size").value = 40
-    $(".spacing").innerText = $(".spacing").value
     $(".meme-top-text").style.padding = `${$(".spacing").value}px`
     $(".meme-bottom-text").style.padding = `${$(".spacing").value}px`
     $(".interline").value = 1.2
@@ -196,49 +194,40 @@ $(".shadow-white").addEventListener("click", () => {
     bottomText.style.textShadow = "rgb(255, 255, 255) 2px 2px, rgb(255, 255, 255) -2px 2px, rgb(255, 255, 255) 2px -2px, rgb(255, 255, 255) -2px -2px"
 })
 
-$("#brightness").addEventListener("click", () => {
-    const rangeValue = $("#brightness").value
-    $(".meme-img").style.filter = `brightness(${rangeValue})`
+$("#brightness").addEventListener("input", () => {
+    $(".meme-img").style.filter = `brightness(${$("#brightness").value})`
 })
 
-$("#opacity").addEventListener("click", () => {
-    const rangeValue = $("#opacity").value
-    $(".meme-img").style.filter = `opacity(${rangeValue})`
+$("#opacity").addEventListener("input", () => {
+    $(".meme-img").style.filter = `opacity(${$("#opacity").value})`
 })
 
-$("#contrast").addEventListener("click", () => {                                      
-    const rangeValue = $("#contrast").value
-    $(".meme-img").style.filter = `contrast(${rangeValue}%)`
+$("#contrast").addEventListener("input", () => {                                      
+    $(".meme-img").style.filter = `contrast(${$("#contrast").value}%)`
 })
 
-$("#blur").addEventListener("click", () => {
-    const rangeValue = $("#blur").value
-    $(".meme-img").style.filter = `blur(${rangeValue}px)`
+$("#blur").addEventListener("input", () => {
+    $(".meme-img").style.filter = `blur(${$("#blur").value}px)`
 })
 
-$("#grayscale").addEventListener("click", () => {
-    const rangeValue = $("#grayscale").value
-    $(".meme-img").style.filter = `grayscale(${rangeValue}%)`
+$("#grayscale").addEventListener("input", () => {
+    $(".meme-img").style.filter = `grayscale(${$("#grayscale").value}%)`
 })
 
-$("#sepia").addEventListener("click", () => {
-    const rangeValue = $("#sepia").value
-    $(".meme-img").style.filter = `sepia(${rangeValue}%)`
+$("#sepia").addEventListener("input", () => {
+    $(".meme-img").style.filter = `sepia(${$("#sepia").value}%)`
 })
 
-$("#hue-rotation").addEventListener("click", () => {
-    const rangeValue = $("#hue-rotation").value
-    $(".meme-img").style.filter = `hue-rotate(${rangeValue}deg)`
+$("#hue-rotation").addEventListener("input", () => {
+    $(".meme-img").style.filter = `hue-rotate(${$("#hue-rotation").value}deg)`
 })
 
-$("#saturate").addEventListener("click", () => {
-    const rangeValue = $("#saturate").value
-    $(".meme-img").style.filter = `saturate(${rangeValue}%)`
+$("#saturate").addEventListener("input", () => {
+    $(".meme-img").style.filter = `saturate(${$("#saturate").value}%)`
 })
 
-$("#invert").addEventListener("click", () => {
-    const rangeValue = $("#invert").value
-    $(".meme-img").style.filter = `invert(${rangeValue})`
+$("#invert").addEventListener("input", () => {
+    $(".meme-img").style.filter = `invert(${$("#invert").value})`
 })
 
 $(".reset-filter").addEventListener("click", () => {
@@ -253,19 +242,28 @@ $(".reset-filter").addEventListener("click", () => {
     $(".meme-img").style.filter = `invert(${$("#invert").value = 0})`
 })
 
-const mediaqueryList = window.matchMedia("(max-width: 500px)");
+const mediaQuery = window.matchMedia("(max-width: 700px)");
+mediaQuery.addListener(handleMediaChange);
 
-mediaqueryList.addListener(function(e) {
+function handleMediaChange (e) {
     if (e.matches) {
         $(".spacing").value = 15
-        topText.style.padding= `${$(".spacing").value}px`     
+        topText.style.padding= `${$(".spacing").value}px`
         bottomText.style.padding= `${$(".spacing").value}px`
+        $("#font-size").value = 25
+        topText.style.fontSize= `${$("#font-size").value}px`
+        bottomText.style.fontSize= `${$("#font-size").value}px`
     } else {
         $(".spacing").value = 30
         topText.style.padding= `${$(".spacing").value}px`
         bottomText.style.padding= `${$(".spacing").value}px`
+        $("#font-size").value = 40
+        topText.style.fontSize= `${$("#font-size").value}px`
+        bottomText.style.fontSize= `${$("#font-size").value}px`
     }
-});
+}
+
+handleMediaChange(mediaQuery);
 
 const downloadMeme = () => {
     domtoimage.toBlob($(".meme-container")).then((blob) => {

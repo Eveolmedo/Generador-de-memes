@@ -101,16 +101,11 @@ main{
     background-color: #000000;
 }
 
-h2{
-    padding: 30px;
-}
-
 .meme-img{
     flex-grow: 1;
 }
 
 .meme-top-text-container, .meme-bottom-text-container{
-    font-size: 30px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     background-color: #ffffff;
 }
@@ -398,6 +393,10 @@ input[type='checkbox']{
     aside{
         width: 100vw;
     }
+
+    .meme-container{
+        height: 400px;
+    }
 }
 
 @media (max-width: 500px){
@@ -415,12 +414,7 @@ input[type='checkbox']{
     
     .meme-container{
         height: 330px;
-        width: 90%;
-    }
-
-    h2{
-        font-size: 25px;
-        padding: 10px;
+        width: 85%;
     }
 
     .download-meme{
